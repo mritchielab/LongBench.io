@@ -20,7 +20,7 @@ The *LongBench* dataset is a valuable resource for benchmarking and improving se
 
 # Expremental design
 
-<img src="Figure1.pdf" style="width:100%;" />
+![](Figure1.png){width=100%}
 
 The experimental design of the *LongBench* study includes eight lung cancer cell lines derived from patients with distinct subtypes, specifically Lung Adenocarcinoma (LUAD) and two Small Cell Lung Cancer (SCLC) subtypes: SCLC-A and SCLC-P. These subtypes are defined by differential expression of the transcriptional regulators **ASCL1** and **POU2F3**. Each cell line was cultured independently to preserve its molecular identity.
 
