@@ -1,0 +1,44 @@
+baseurl = "/"
+languageCode = "en-US"
+title = "LongBench"
+theme = "hugo-lithium"
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
+
+[permalinks]
+    post = ":slug/"
+
+[[menu.main]]
+    name = "Ritchie Lab"
+    url = "https://www.wehi.edu.au/laboratory/ritchie-lab/"
+[[menu.main]]
+    name = "GEO"
+    url = "https://www.ncbi.nlm.nih.gov/bioproject?term=PRJNA1171488&cmd=DetailsSearch"
+[[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+
+[params]
+    description = "LongBench"
+
+    # options for highlight.js (version, additional languages, and theme)
+    highlightjsVersion = "9.12.0"
+    highlightjsCDN = "//cdnjs.cloudflare.com/ajax/libs"
+    highlightjsLang = ["r", "yaml"]
+    highlightjsTheme = "github"
+
+    MathJaxCDN = "//cdnjs.cloudflare.com/ajax/libs"
+    MathJaxVersion = "2.7.5"
+
+    # path to the favicon, under "static"
+    favicon = "logo.png"
+
+    [params.logo]
+      url = "logo.png"  
+      width = 100
+      height = 100
+      alt = "LongBench"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
