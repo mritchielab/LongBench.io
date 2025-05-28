@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R on LongBench</title>
+    <link>https://youyupei.github.io/LongBench.io/categories/r/</link>
+    <description>Recent content in R on LongBench</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 20 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://youyupei.github.io/LongBench.io/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LongBench data description</title>
+      <link>https://youyupei.github.io/LongBench.io/longbench-data-description/</link>
+      <pubDate>Tue, 20 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://youyupei.github.io/LongBench.io/longbench-data-description/</guid>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;&lt;em&gt;LongBench&lt;/em&gt; isa comprehensive benchmarking dataset designed to fill these critical gaps. Derived from eight lung cancer cell lines with synthetic RNA spike-ins, &lt;em&gt;LongBench&lt;/em&gt; includes bulk, single-cell, and single-nucleus RNA-seq data from three state-of-the-art long-read sequencing platforms — &lt;strong&gt;ONT PCR-cDNA&lt;/strong&gt;, &lt;strong&gt;ONT direct RNA&lt;/strong&gt;, and &lt;strong&gt;PacBio Kinnex&lt;/strong&gt; — alongside &lt;strong&gt;Illumina&lt;/strong&gt; short-read data for robust cross-platform comparisons.&lt;/p&gt;&#xA;&lt;p&gt;The &lt;em&gt;LongBench&lt;/em&gt; dataset is a valuable resource for benchmarking and improving sequencing protocols and bioinformatics tools. With the &lt;em&gt;LongBench&lt;/em&gt; dataset we present a systematic evaluation of transcript capture, quantification, and differential expression analyses, examining the strengths and limitations of each sequencing platform in various biological contexts, enabling researchers to make more informed decisions on platform and method selection.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
