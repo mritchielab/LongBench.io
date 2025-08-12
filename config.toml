@@ -2,7 +2,7 @@ baseurl = "https://youyupei.github.io/LongBench.io/"
 languageCode = "en-US"
 title = "LongBench"
 theme = "hugo-lithium"
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
+ignoreFiles = ["_cache$", "_files$", "\\.knit\\.md$", "\\.utf8\\.md$"]
 
 [permalinks]
     post = ":slug/"
