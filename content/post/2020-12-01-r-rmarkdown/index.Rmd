@@ -45,4 +45,118 @@ Additionally, **10X Genomics 3′ cDNA** single-cell (sc) and single-nucleus (sn
 
 enabling comprehensive cross-platform and library-type comparisons.
 
+# Files
+
+Below is a list of files. The detailed contents and description will be added after they are uploaded.
+
+
+## Long-read bulk RNA-seq
+Bulk RNA-seq data are available for each cell line using ONT (Oxford Nanopore Technologies) and PacBio platforms. ONT data are further divided into cDNA (PCR-cDNA) and direct RNA (dRNA) sequencing, with some cell lines having additional "topup" dRNA runs.
+
+### ONT (Oxford Nanopore Technologies)
+
+#### cDNA (PCR-cDNA)
+Files with the pattern `<cellline>_bulk_ONT.fastq.gz` represent ONT PCR-cDNA bulk RNA-seq for each cell line:
+```
+H69_bulk_ONT.fastq.gz
+H146_bulk_ONT.fastq.gz
+H211_bulk_ONT.fastq.gz
+H526_bulk_ONT.fastq.gz
+H1975_bulk_ONT.fastq.gz
+H2228_bulk_ONT.fastq.gz
+HCC827_bulk_ONT.fastq.gz
+SHP77_bulk_ONT.fastq.gz
+```
+
+#### direct RNA (dRNA)
+Files with the pattern `<cellline>_dRNA_ONT.fastq.gz` represent ONT direct RNA bulk RNA-seq. Additional files in `fastqs_topup/` are top-up dRNA runs for the same cell lines:
+```
+H69_dRNA_ONT.fastq.gz
+H146_dRNA_ONT.fastq.gz
+H211_dRNA_ONT.fastq.gz
+H526_dRNA_ONT.fastq.gz
+H1975_dRNA_ONT.fastq.gz
+H2228_dRNA_ONT.fastq.gz
+HCC827_dRNA_ONT.fastq.gz
+SHP77_dRNA_ONT.fastq.gz
+
+fastqs_topup/
+  H69_dRNA_ONT_topup.fastq.gz
+  H146_dRNA_ONT_topup.fastq.gz
+  H211_dRNA_ONT_topup.fastq.gz
+  H526_dRNA_ONT_topup.fastq.gz
+  H1975_dRNA_ONT_topup.fastq.gz
+  H2228_dRNA_ONT_topup.fastq.gz
+  HCC827_dRNA_ONT_topup.fastq.gz
+  SHP77_dRNA_ONT_topup.fastq.gz
+  md5sums_topup.chk
+```
+
+### PacBio
+Files with the pattern `<cellline>_bulk_PB.fastq.gz` represent PacBio Kinnex bulk RNA-seq for each cell line:
+```
+H69_bulk_PB.fastq.gz
+H146_bulk_PB.fastq.gz
+H211_bulk_PB.fastq.gz
+H526_bulk_PB.fastq.gz
+H1975_bulk_PB.fastq.gz
+H2228_bulk_PB.fastq.gz
+HCC827_bulk_PB.fastq.gz
+SHP77_bulk_PB.fastq.gz
+```
+
+## Short-read bulk RNA-seq (Illumina)
+Paired-end Illumina short-read data for each cell line (R1/R2):
+
+```
+H69_S2_R1_001.fastq.gz
+H69_S2_R2_001.fastq.gz
+H146_S1_R1_001.fastq.gz
+H146_S1_R2_001.fastq.gz
+H211_S4_R1_001.fastq.gz
+H211_S4_R2_001.fastq.gz
+H526_S3_R1_001.fastq.gz
+H526_S3_R2_001.fastq.gz
+H1975_S6_R1_001.fastq.gz
+H1975_S6_R2_001.fastq.gz
+H2228_S7_R1_001.fastq.gz
+H2228_S7_R2_001.fastq.gz
+HCC827_S8_R1_001.fastq.gz
+HCC827_S8_R2_001.fastq.gz
+SHP77_S5_R1_001.fastq.gz
+SHP77_S5_R2_001.fastq.gz
+```
+
+## Single-cell RNA-seq (10X Genomics)
+Single-cell RNA-seq data (SC_*) from 10X Genomics, sequenced on ONT, PacBio, and Illumina platforms:
+
+```
+SC_ONT.fastq.gz
+SC_PB.fastq.gz
+SC_GEX_S14_L001_I1_001.fastq.gz
+SC_GEX_S14_L001_I2_001.fastq.gz
+SC_GEX_S14_L001_R1_001.fastq.gz
+SC_GEX_S14_L001_R2_001.fastq.gz
+SC_GEX_S14_L002_I1_001.fastq.gz
+SC_GEX_S14_L002_I2_001.fastq.gz
+SC_GEX_S14_L002_R1_001.fastq.gz
+SC_GEX_S14_L002_R2_001.fastq.gz
+```
+
+## Single-nucleus RNA-seq (10X Genomics)
+Single-nucleus RNA-seq data (SN_*) from 10X Genomics, sequenced on ONT, PacBio, and Illumina platforms:
+
+```
+SN_ONT.fastq.gz
+SN_PB.fastq.gz
+SN_GEX_S13_L001_I1_001.fastq.gz
+SN_GEX_S13_L001_I2_001.fastq.gz
+SN_GEX_S13_L001_R1_001.fastq.gz
+SN_GEX_S13_L001_R2_001.fastq.gz
+SN_GEX_S13_L002_I1_001.fastq.gz
+SN_GEX_S13_L002_I2_001.fastq.gz
+SN_GEX_S13_L002_R1_001.fastq.gz
+SN_GEX_S13_L002_R2_001.fastq.gz
+```
+
 For more details, please visit the [NCBI BioProject page](https://www.ncbi.nlm.nih.gov/bioproject?term=PRJNA1171488&cmd=DetailsSearch) or [contact us](/contact/).

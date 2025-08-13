@@ -1,0 +1,34 @@
+name: Build and Deploy Blogdown Site
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/changqingw/longbench.io:latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build site
+        run: |
+          Rscript -e "blogdown::build_site(build_rmd = TRUE)"
+
+      - name: Prepare docs folder
+        run: |
+          rm -rf docs
+          mv public docs
+          touch docs/.nojekyll
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          publish_branch: gh-pages
+          force_orphan: true
