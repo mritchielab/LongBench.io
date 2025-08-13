@@ -1,4 +1,4 @@
-baseurl = "https://youyupei.github.io/LongBench.io/"
+baseurl = "https://mritchielab.github.io/LongBench.io/"
 languageCode = "en-US"
 title = "LongBench"
 theme = "hugo-lithium"

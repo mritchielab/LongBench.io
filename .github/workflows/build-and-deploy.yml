@@ -10,7 +10,7 @@ jobs:
   build-deploy:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/changqingw/longbench.io:latest
+      image: ghcr.io/mritchielab/longbench.io:latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4

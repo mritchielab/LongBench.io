@@ -22,8 +22,8 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t ghcr.io/changqingw/longbench.io:latest .
+          docker build -t ghcr.io/mritchielab/longbench.io:latest .
 
       - name: Push Docker image
         run: |
-          docker push ghcr.io/changqingw/longbench.io:latest
+          docker push ghcr.io/mritchielab/longbench.io:latest
