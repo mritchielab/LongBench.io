@@ -25,5 +25,9 @@ Some example applications of the LongBench dataset include:
 ## Data Analysis Tutorials and Workflows
 The following tutorials are available that demonstrate how to analyse the LongBench data:
 
-- [Bulk RNA-seq Differential analysis (place holder)]()
-- [Single-cell RNA-seq analysis (place holder)]()
+- [Bulk RNA-seq Differential analysis with edgeR (place holder)]()
+- [Single-cell RNA-seq analysis with Seurat (place holder)]()
+
+
+## Citing the LongBench project
+Sequencing data is available from Gene Expression Omnibus under accession number GSE303762. LongBench manuscript will available soon.
