@@ -2,9 +2,9 @@ name: Build and Deploy Blogdown Site
 
 on:
   push:
-    branches: [ main ]
+    branches: [ gh-pages ]
   pull_request:
-    branches: [ main ]
+    branches: [ gh-pages ]
 
 jobs:
   build-deploy:
