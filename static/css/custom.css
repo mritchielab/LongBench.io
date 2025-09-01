@@ -39,26 +39,22 @@
     margin-bottom: 1.5rem;
 }
 
-/* Style lists and links */
+/* Default styling for all lists - normal bullet points */
 .home-page .article-content ul {
-    list-style: none;
-    padding-left: 0;
+    list-style: disc;
+    padding-left: 1.5rem;
 }
 
 .home-page .article-content ul li {
-    margin-bottom: 1rem;
-    padding: 1rem;
-    background-color: #fff;
-    border: 1px solid #e9ecef;
-    border-radius: 8px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 0.5rem;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+    transition: none;
 }
 
-.home-page .article-content ul li:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
+/* Styling for links in lists */
 .home-page .article-content ul li strong a {
     color: #2c3e50;
     text-decoration: none;
@@ -69,21 +65,29 @@
     color: #3498db;
 }
 
-/* Style external links in the resources section */
-.home-page .article-content h2:contains("External Resources")+ul li {
-    background-color: #3498db;
-    color: white;
-    text-align: center;
+/* Target "Getting Started" section (2nd h2) and "External Resources" section (3rd h2) */
+.home-page .article-content h2:nth-of-type(2)+ul,
+.home-page .article-content h2:nth-of-type(3)+ul {
+    list-style: none;
+    padding-left: 0;
 }
 
-.home-page .article-content h2:contains("External Resources")+ul li a {
-    color: white;
-    text-decoration: none;
+.home-page .article-content h2:nth-of-type(2)+ul li,
+.home-page .article-content h2:nth-of-type(3)+ul li {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.home-page .article-content h2:contains("External Resources")+ul li:hover {
-    background-color: #2980b9;
+.home-page .article-content h2:nth-of-type(2)+ul li:hover,
+.home-page .article-content h2:nth-of-type(3)+ul li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
