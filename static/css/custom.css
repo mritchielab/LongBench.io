@@ -105,3 +105,23 @@
         padding: 0 1rem;
     }
 }
+
+/* Make main content full width */
+.main-container {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 auto;
+  padding: 0 2rem; /* adjust padding if you want breathing space */
+}
+
+/* Ensure TOC floats nicely without shrinking content */
+#TOC {
+  max-width: 250px;
+  float: left;
+  margin-right: 2rem;
+}
+
+/* Push content beside TOC */
+.toc-content {
+  margin-left: 270px; /* should be a bit larger than TOC max-width */
+}
