@@ -32,5 +32,111 @@ tags: ["R Markdown", "plot", "regression"]
 - 3 scRNA-seq datasets, and
 - 3 snRNA-seq datasets,</p>
 <p>enabling comprehensive cross-platform and library-type comparisons.</p>
+</div>
+<div id="files" class="section level1">
+<h1>Files</h1>
+<p>Below is a list of files. The detailed contents and description will be added after they are uploaded.</p>
+<div id="long-read-bulk-rna-seq" class="section level2">
+<h2>Long-read bulk RNA-seq</h2>
+<p>Bulk RNA-seq data are available for each cell line using ONT (Oxford Nanopore Technologies) and PacBio platforms. ONT data are further divided into cDNA (PCR-cDNA) and direct RNA (dRNA) sequencing, with some cell lines having additional “topup” dRNA runs.</p>
+<div id="ont-oxford-nanopore-technologies" class="section level3">
+<h3>ONT (Oxford Nanopore Technologies)</h3>
+<div id="cdna-pcr-cdna" class="section level4">
+<h4>cDNA (PCR-cDNA)</h4>
+<p>Files with the pattern <code>&lt;cellline&gt;_bulk_ONT.fastq.gz</code> represent ONT PCR-cDNA bulk RNA-seq for each cell line:</p>
+<pre><code>H69_bulk_ONT.fastq.gz
+H146_bulk_ONT.fastq.gz
+H211_bulk_ONT.fastq.gz
+H526_bulk_ONT.fastq.gz
+H1975_bulk_ONT.fastq.gz
+H2228_bulk_ONT.fastq.gz
+HCC827_bulk_ONT.fastq.gz
+SHP77_bulk_ONT.fastq.gz</code></pre>
+</div>
+<div id="direct-rna-drna" class="section level4">
+<h4>direct RNA (dRNA)</h4>
+<p>Files with the pattern <code>&lt;cellline&gt;_dRNA_ONT.fastq.gz</code> represent ONT direct RNA bulk RNA-seq. Additional files in <code>fastqs_topup/</code> are top-up dRNA runs for the same cell lines:</p>
+<pre><code>H69_dRNA_ONT.fastq.gz
+H146_dRNA_ONT.fastq.gz
+H211_dRNA_ONT.fastq.gz
+H526_dRNA_ONT.fastq.gz
+H1975_dRNA_ONT.fastq.gz
+H2228_dRNA_ONT.fastq.gz
+HCC827_dRNA_ONT.fastq.gz
+SHP77_dRNA_ONT.fastq.gz
+
+fastqs_topup/
+  H69_dRNA_ONT_topup.fastq.gz
+  H146_dRNA_ONT_topup.fastq.gz
+  H211_dRNA_ONT_topup.fastq.gz
+  H526_dRNA_ONT_topup.fastq.gz
+  H1975_dRNA_ONT_topup.fastq.gz
+  H2228_dRNA_ONT_topup.fastq.gz
+  HCC827_dRNA_ONT_topup.fastq.gz
+  SHP77_dRNA_ONT_topup.fastq.gz
+  md5sums_topup.chk</code></pre>
+</div>
+</div>
+<div id="pacbio" class="section level3">
+<h3>PacBio</h3>
+<p>Files with the pattern <code>&lt;cellline&gt;_bulk_PB.fastq.gz</code> represent PacBio Kinnex bulk RNA-seq for each cell line:</p>
+<pre><code>H69_bulk_PB.fastq.gz
+H146_bulk_PB.fastq.gz
+H211_bulk_PB.fastq.gz
+H526_bulk_PB.fastq.gz
+H1975_bulk_PB.fastq.gz
+H2228_bulk_PB.fastq.gz
+HCC827_bulk_PB.fastq.gz
+SHP77_bulk_PB.fastq.gz</code></pre>
+</div>
+</div>
+<div id="short-read-bulk-rna-seq-illumina" class="section level2">
+<h2>Short-read bulk RNA-seq (Illumina)</h2>
+<p>Paired-end Illumina short-read data for each cell line (R1/R2):</p>
+<pre><code>H69_S2_R1_001.fastq.gz
+H69_S2_R2_001.fastq.gz
+H146_S1_R1_001.fastq.gz
+H146_S1_R2_001.fastq.gz
+H211_S4_R1_001.fastq.gz
+H211_S4_R2_001.fastq.gz
+H526_S3_R1_001.fastq.gz
+H526_S3_R2_001.fastq.gz
+H1975_S6_R1_001.fastq.gz
+H1975_S6_R2_001.fastq.gz
+H2228_S7_R1_001.fastq.gz
+H2228_S7_R2_001.fastq.gz
+HCC827_S8_R1_001.fastq.gz
+HCC827_S8_R2_001.fastq.gz
+SHP77_S5_R1_001.fastq.gz
+SHP77_S5_R2_001.fastq.gz</code></pre>
+</div>
+<div id="single-cell-rna-seq-10x-genomics" class="section level2">
+<h2>Single-cell RNA-seq (10X Genomics)</h2>
+<p>Single-cell RNA-seq data (SC_*) from 10X Genomics, sequenced on ONT, PacBio, and Illumina platforms:</p>
+<pre><code>SC_ONT.fastq.gz
+SC_PB.fastq.gz
+SC_GEX_S14_L001_I1_001.fastq.gz
+SC_GEX_S14_L001_I2_001.fastq.gz
+SC_GEX_S14_L001_R1_001.fastq.gz
+SC_GEX_S14_L001_R2_001.fastq.gz
+SC_GEX_S14_L002_I1_001.fastq.gz
+SC_GEX_S14_L002_I2_001.fastq.gz
+SC_GEX_S14_L002_R1_001.fastq.gz
+SC_GEX_S14_L002_R2_001.fastq.gz</code></pre>
+</div>
+<div id="single-nucleus-rna-seq-10x-genomics" class="section level2">
+<h2>Single-nucleus RNA-seq (10X Genomics)</h2>
+<p>Single-nucleus RNA-seq data (SN_*) from 10X Genomics, sequenced on ONT, PacBio, and Illumina platforms:</p>
+<pre><code>SN_ONT.fastq.gz
+SN_PB.fastq.gz
+SN_GEX_S13_L001_I1_001.fastq.gz
+SN_GEX_S13_L001_I2_001.fastq.gz
+SN_GEX_S13_L001_R1_001.fastq.gz
+SN_GEX_S13_L001_R2_001.fastq.gz
+SN_GEX_S13_L002_I1_001.fastq.gz
+SN_GEX_S13_L002_I2_001.fastq.gz
+SN_GEX_S13_L002_R1_001.fastq.gz
+SN_GEX_S13_L002_R2_001.fastq.gz</code></pre>
 <p>For more details, please visit the <a href="https://www.ncbi.nlm.nih.gov/bioproject?term=PRJNA1171488&amp;cmd=DetailsSearch">NCBI BioProject page</a> or <a href="/contact/">contact us</a>.</p>
+</div>
 </div>

@@ -20,6 +20,9 @@ ignoreFiles = ["_cache$", "_files$", "\\.knit\\.md$", "\\.utf8\\.md$"]
 [params]
     description = "LongBench"
 
+    # Custom CSS files
+    customCSS = ["css/custom.css"]
+
     # options for highlight.js (version, additional languages, and theme)
     highlightjsVersion = "9.12.0"
     highlightjsCDN = "//cdnjs.cloudflare.com/ajax/libs"
