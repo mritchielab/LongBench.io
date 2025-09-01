@@ -25,8 +25,8 @@ Some example applications of the LongBench dataset include:
 ## Data Analysis Tutorials and Workflows
 The following tutorials are available that demonstrate how to analyse the LongBench data:
 
-- [Bulk RNA-seq Differential analysis with edgeR (place holder)]()
-- [Single-cell RNA-seq analysis with Seurat (place holder)]()
+- [Bulk RNA-seq Differential analysis with edgeR](https://mritchielab.github.io/LongBench.io/bulk-de-benchmarking/)
+- [Single-cell RNA-seq analysis with Seurat (Coming soon)]()
 
 
 ## Citing the LongBench project
