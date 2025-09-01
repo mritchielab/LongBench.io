@@ -15,11 +15,11 @@ LongBench is a comprehensive benchmarking dataset designed to evaluate long-read
 
 ## Getting Started
 
-- **[About LongBench](/about/)** - Learn more about our dataset and methodology
-- **[Data Description](/longbench-data-description/)** - Detailed experimental design and results
-- **[Single-cell analysis tutorial](/404/)** - (Coming soon) Step-by-step guide for single-cell RNA-seq analysis with LongBench
-- **[Bulk analysis tutorial](/404/)** - (Coming soon) Step-by-step guide for bulk RNA-seq analysis with LongBench
-- **[Contact Us](/contact/)** - Get in touch for collaborations and questions
+- **[About LongBench](about/)** - Learn more about our dataset and methodology
+- **[Data Description](longbench-data-description/)** - Detailed experimental design and results
+- **[Single-cell analysis tutorial](404/)** - (Coming soon) Step-by-step guide for single-cell RNA-seq analysis with LongBench
+- **[Bulk analysis tutorial](404/)** - (Coming soon) Step-by-step guide for bulk RNA-seq analysis with LongBench
+- **[Contact Us](contact/)** - Get in touch for collaborations and questions
 
 ## External Resources
 
