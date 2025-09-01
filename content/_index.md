@@ -13,14 +13,13 @@ LongBench is a comprehensive benchmarking dataset designed to evaluate long-read
 - **Synthetic controls**: Sequins and Lexogen SIRV-set 4 spike-ins for ground truth analysis
 - **Multiple data types**: Bulk, single-cell, and single-nucleus RNA-seq
 
-## Getting Started
+## Tutorials
 
-- **[About LongBench](about/)** - Learn more about our dataset and methodology
+- **[Bulk analysis tutorial](bulk-de-benchmarking/)** - Step-by-step guide for bulk RNA-seq analysis with LongBench
+
+## About LongBench
+
 - **[Data Description](longbench-data-description/)** - Detailed experimental design and results
-- **[Test Tutorial](test-tutorial/)** - Example tutorial showing experimental design and data characteristics
-- **[Single-cell analysis tutorial](404/)** - (Coming soon) Step-by-step guide for single-cell RNA-seq analysis with LongBench
-- **[Bulk analysis tutorial](404/)** - (Coming soon) Step-by-step guide for bulk RNA-seq analysis with LongBench
-- **[Contact Us](contact/)** - Get in touch for collaborations and questions
 
 ## External Resources
 
