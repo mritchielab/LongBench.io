@@ -15,13 +15,13 @@ LongBench is a comprehensive benchmarking dataset designed to evaluate long-read
 
 ## Tutorials
 
-- **[Bulk analysis tutorial](bulk-de-benchmarking/)** - Step-by-step guide for bulk RNA-seq analysis with LongBench
+- [**Bulk analysis tutorial** - Step-by-step guide for bulk RNA-seq analysis with LongBench](bulk-de-benchmarking/)
 
 ## About LongBench
 
-- **[Data Description](longbench-data-description/)** - Detailed experimental design and results
+- [**Data Description** - Detailed experimental design and results](longbench-data-description/)
 
 ## External Resources
 
-- [Ritchie Lab](https://www.wehi.edu.au/laboratory/ritchie-lab/) - Our research laboratory
-- [GEO Database](https://www.ncbi.nlm.nih.gov/bioproject?term=PRJNA1171488&cmd=DetailsSearch) - Access the raw data
+- [Ritchie Lab - Our research laboratory](https://www.wehi.edu.au/laboratory/ritchie-lab/)
+- [GEO Database - Access the raw data](https://www.ncbi.nlm.nih.gov/bioproject?term=PRJNA1171488&cmd=DetailsSearch)

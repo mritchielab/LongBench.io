@@ -39,41 +39,13 @@
     margin-bottom: 1.5rem;
 }
 
-/* Default styling for all lists - normal bullet points */
-.home-page .article-content ul {
-    list-style: disc;
-    padding-left: 1.5rem;
-}
-
-.home-page .article-content ul li {
-    margin-bottom: 0.5rem;
-    padding: 0;
-    background: none;
-    border: none;
-    border-radius: 0;
-    transition: none;
-}
-
-/* Styling for links in lists */
-.home-page .article-content ul li strong a {
-    color: #2c3e50;
-    text-decoration: none;
-    font-size: 1.1rem;
-}
-
-.home-page .article-content ul li strong a:hover {
-    color: #3498db;
-}
-
-/* Target "Getting Started" section (2nd h2) and "External Resources" section (3rd h2) */
-.home-page .article-content h2:nth-of-type(2)+ul,
-.home-page .article-content h2:nth-of-type(3)+ul {
+/* Card styling for all sections EXCEPT the first one (Key Features) */
+.home-page .article-content h2:not(:first-of-type)+ul {
     list-style: none;
     padding-left: 0;
 }
 
-.home-page .article-content h2:nth-of-type(2)+ul li,
-.home-page .article-content h2:nth-of-type(3)+ul li {
+.home-page .article-content h2:not(:first-of-type)+ul li {
     margin-bottom: 1rem;
     padding: 1rem;
     background-color: #fff;
@@ -82,12 +54,20 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.home-page .article-content h2:nth-of-type(2)+ul li:hover,
-.home-page .article-content h2:nth-of-type(3)+ul li:hover {
+.home-page .article-content h2:not(:first-of-type)+ul li:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* Remove href styles for links in card sections */
+.home-page .article-content h2:not(:first-of-type)+ul li a,
+.home-page .article-content h2:not(:first-of-type)+ul li a:hover,
+.home-page .article-content h2:not(:first-of-type)+ul li a:focus {
+    border-bottom: none;
+    box-shadow: none;
+    text-decoration: none;
+    background: transparent;
+}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
