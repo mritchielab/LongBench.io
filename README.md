@@ -12,6 +12,7 @@ More details of the dataset can be found [here](https://mritchielab.github.io/Lo
 
 ## Content
 - [Applications](#applications)
+- [Accessing the LongBench Dataset on AWS S3](#accessing-the-longbench-dataset-on-aws-s3)
 - [Data Analysis Tutorials](#data-analysis-tutorials-and-workflows)
 - [Citing the LongBench project](#citing-the-LongBench-project)
 
@@ -21,6 +22,25 @@ Some example applications of the LongBench dataset include:
 - **Studying biological questions** including isoform diversity, variant calling, allele-specific expression, and RNA modifications across lung cancer subtypes.
 - **Benchmarking analysis tools and method development** for isoform quantification, differential expression (DE), differential transcript usage (DTU), and variant calling.
 - **Cross-platform comparisons** of accuracy, sensitivity, and biases between ONT, PacBio, and Illumina sequencing technologies.
+
+## Accessing the LongBench Dataset on AWS S3
+
+The LongBench dataset is hosted on AWS S3 for direct access. To download the data:
+
+**Install the AWS CLI**:  
+   ```bash
+   pip install awscli
+   ```
+   **list data in the s3 bucket**
+   ```bash
+   aws s3 ls s3://longbench-data/ --no-sign-request
+   ```
+   **Download data**
+  ```bash
+   aws s3 sync s3://longbench-data/<folder> <local foldername> --no-sign-request
+   ```
+
+
 
 ## Data Analysis Tutorials and Workflows
 The following tutorials are available that demonstrate how to analyse the LongBench data:
