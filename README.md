@@ -37,9 +37,8 @@ The LongBench dataset is hosted on AWS S3 for direct access. To download the dat
    ```
    **Download data**
   ```bash
-   aws s3 sync s3://longbench-data/<folder> <local foldername> --no-sign-request
+   aws s3 sync s3://longbench-data/<dir name> <local dir name> --no-sign-request
    ```
-
 
 
 ## Data Analysis Tutorials and Workflows
