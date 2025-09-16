@@ -49,4 +49,8 @@ The following tutorials are available that demonstrate how to analyse the LongBe
 
 
 ## Citing the LongBench project
-Sequencing data is available from Gene Expression Omnibus under accession number GSE303762. LongBench manuscript will available soon.
+If you use the LongBench dataset, please cite:
+
+Yupei You, Ashleigh Solano, James Lancaster, Margaux David, Changqing Wang, Shian Su, Kathleen Zeglinski, Reza Ghamsari, Manveer Chauhan, Josie Gleeson, Yair D. J. Prawer, Jin Ng, Benedicte Dubois, Isabelle Cleynen, Marie-Liesse Asselin-Labat, Kate D. Sutherland, Michael B. Clark, Quentin Gouil, Matthew E. Ritchie.
+Benchmarking long-read RNA-sequencing technologies with LongBench: a cross-platform reference dataset profiling cancer cell lines with bulk and single-cell approaches.
+bioRxiv 2025.09.11.675724. https://doi.org/10.1101/2025.09.11.675724
