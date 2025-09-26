@@ -1,0 +1,107 @@
+/* Custom styles for the home page ONLY */
+
+/* Style the home page content when using _index.md */
+.home-page .article-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Style the main heading on home page */
+.home-page .article-content h1:first-child {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+/* Style paragraphs following the main heading */
+.home-page .article-content h1:first-child+p {
+    font-size: 1.2rem;
+    color: #5a6c7d;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 3rem;
+    background-color: #f8f9fa;
+    padding: 0 2rem 2rem 2rem;
+    margin-top: -2rem;
+    border-radius: 0 0 8px 8px;
+}
+
+/* Style section headings */
+.home-page .article-content h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Card styling for all sections EXCEPT the first one (Key Features) */
+.home-page .article-content h2:not(:first-of-type)+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.home-page .article-content h2:not(:first-of-type)+ul li {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-page .article-content h2:not(:first-of-type)+ul li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Remove href styles for links in card sections */
+.home-page .article-content h2:not(:first-of-type)+ul li a,
+.home-page .article-content h2:not(:first-of-type)+ul li a:hover,
+.home-page .article-content h2:not(:first-of-type)+ul li a:focus {
+    border-bottom: none;
+    box-shadow: none;
+    text-decoration: none;
+    background: transparent;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .home-page .article-content h1:first-child {
+        font-size: 2rem;
+        padding: 1.5rem;
+    }
+
+    .home-page .article-content h1:first-child+p {
+        font-size: 1.1rem;
+        padding: 0 1.5rem 1.5rem 1.5rem;
+    }
+
+    .home-page .article-content {
+        padding: 0 1rem;
+    }
+}
+
+/* Make main content full width */
+.main-container {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 auto;
+  padding: 0 2rem; /* adjust padding if you want breathing space */
+}
+
+/* Ensure TOC floats nicely without shrinking content */
+#TOC {
+  max-width: 250px;
+  float: left;
+  margin-right: 2rem;
+}
+
+/* Push content beside TOC */
+.toc-content {
+  margin-left: 270px; /* should be a bit larger than TOC max-width */
+}

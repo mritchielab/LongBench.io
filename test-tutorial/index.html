@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.123.7">
+
+
+<title>Test Tutorial - LongBench</title>
+<meta property="og:title" content="Test Tutorial - LongBench">
+
+
+  <link href='https://mritchielab.github.io/LongBench.io/logo.png' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/LongBench.io/css/fonts.css" media="all">
+<link rel="stylesheet" href="/LongBench.io/css/main.css" media="all">
+
+<link rel="stylesheet" href="/LongBench.io/css/custom.css">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="https://mritchielab.github.io/LongBench.io/" class="nav-logo">
+    <img src="/LongBench.io/images/logo.png"
+         width="100"
+         height="100"
+         alt="LongBench">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/LongBench.io/contact/">Contact</a></li>
+    
+    <li><a href="https://www.ncbi.nlm.nih.gov/bioproject?term=PRJNA1171488&amp;cmd=DetailsSearch">GEO</a></li>
+    
+    <li><a href="https://www.wehi.edu.au/laboratory/ritchie-lab/">Ritchie Lab</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">2 min read</span>
+    
+
+    <h1 class="article-title">Test Tutorial</h1>
+
+    
+    <span class="article-date">2025-08-29</span>
+    
+
+    <div class="article-content">
+      
+      
+<div id="introduction" class="section level1">
+    <h1>Introduction</h1>
+    <p><em>LongBench</em> is a comprehensive benchmarking dataset designed to fill these critical gaps. Derived from
+        eight lung cancer cell lines with synthetic RNA spike-ins, <em>LongBench</em> includes bulk, single-cell, and
+        single-nucleus RNA-seq data from three state-of-the-art long-read sequencing platforms — <strong>ONT
+            PCR-cDNA</strong>, <strong>ONT direct RNA</strong>, and <strong>PacBio Kinnex</strong> — alongside
+        <strong>Illumina</strong> short-read data for robust cross-platform comparisons.</p>
+
+    <p>The <em>LongBench</em> dataset is a valuable resource for benchmarking and improving sequencing protocols and
+        bioinformatics tools. With the <em>LongBench</em> dataset we present a systematic evaluation of transcript
+        capture, quantification, and differential expression analyses, examining the strengths and limitations of each
+        sequencing platform in various biological contexts, enabling researchers to make more informed decisions on
+        platform and method selection.</p>
+</div>
+
+<div id="experimental-design" class="section level1">
+    <h1>Experimental design</h1>
+    <p><img src="Figure1.png" style="width:100.0%" /></p>
+
+    <p>The experimental design of the <em>LongBench</em> study includes eight lung cancer cell lines derived from
+        patients with distinct subtypes, specifically Lung Adenocarcinoma (LUAD) and two Small Cell Lung Cancer (SCLC)
+        subtypes: SCLC-A and SCLC-P. These subtypes are defined by differential expression of the transcriptional
+        regulators <strong>ASCL1</strong> and <strong>POU2F3</strong>. Each cell line was cultured independently to
+        preserve its molecular identity.</p>
+
+    <p>To support comparative analyses, a pooled mixture of the eight cell lines was also created in equal proportions
+        for single-cell and single-nucleus RNA-seq experiments.</p>
+
+    <p>Synthetic RNA spike-ins were added to each bulk RNA sample, including <strong>Sequins</strong> (mix A or B) and
+        <strong>Lexogen SIRV-set 4</strong>. Sequins are synthetic transcripts designed to mimic endogenous splicing,
+        with mix A and B containing the same isoforms at differing abundances—serving as ground truth for differential
+        expression analysis. The SIRV-set 4 includes:</p>
+    <ul>
+        <li><strong>E0 mix</strong>: 69 isoforms at equal molar concentrations to assess isoform complexity,</li>
+        <li><strong>ERCC mix</strong>: 92 non-isoform transcripts covering a wide dynamic range for quantification
+            accuracy,</li>
+        <li><strong>Long SIRVs</strong>: 16 transcripts between 4–12 kb, also at equal molar concentrations.</li>
+    </ul>
+
+    <p>These spike-ins enable robust benchmarking of sequencing performance.</p>
+
+    <p>A total of <strong>32 bulk RNA-seq datasets</strong> were generated from the eight samples with spike-ins, across
+        four protocols:</p>
+    <ul>
+        <li>ONT PCR-cDNA,</li>
+        <li>ONT direct RNA (dRNA),</li>
+        <li>PacBio Kinnex cDNA,</li>
+        <li>Illumina short-read sequencing.</li>
+    </ul>
+
+    <p>Additionally, <strong>10X Genomics 3′ cDNA</strong> single-cell (sc) and single-nucleus (sn) libraries were
+        prepared from the pooled mixture and sequenced using ONT PCR-cDNA, PacBio Kinnex cDNA, and Illumina. This
+        yielded:</p>
+    <ul>
+        <li>3 scRNA-seq datasets, and</li>
+        <li>3 snRNA-seq datasets,</li>
+    </ul>
+
+    <p>enabling comprehensive cross-platform and library-type comparisons.</p>
+
+    <p>For more details, please visit the <a
+            href="https://www.ncbi.nlm.nih.gov/bioproject?term=PRJNA1171488&cmd=DetailsSearch">NCBI BioProject page</a>
+        or <a href="../contact/">contact us</a>.</p>
+</div>
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/LongBench.io/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+    
+
+    
+  </body>
+</html>
+

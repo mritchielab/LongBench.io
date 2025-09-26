@@ -1,0 +1,162 @@
+---
+title: "LongBench data description"
+author: "Yupei You"
+date: 2025-05-20
+categories: ["R"]
+tags: ["R Markdown", "plot", "regression"]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+# Introduction 
+
+*LongBench* isa comprehensive benchmarking dataset designed to fill these critical gaps. Derived from eight lung cancer cell lines with synthetic RNA spike-ins, *LongBench* includes bulk, single-cell, and single-nucleus RNA-seq data from three state-of-the-art long-read sequencing platforms — **ONT PCR-cDNA**, **ONT direct RNA**, and **PacBio Kinnex** — alongside **Illumina** short-read data for robust cross-platform comparisons.
+
+The *LongBench* dataset is a valuable resource for benchmarking and improving sequencing protocols and bioinformatics tools. With the *LongBench* dataset we present a systematic evaluation of transcript capture, quantification, and differential expression analyses, examining the strengths and limitations of each sequencing platform in various biological contexts, enabling researchers to make more informed decisions on platform and method selection.
+
+
+
+# Expremental design
+
+![](Figure1.png){width=100%}
+
+The experimental design of the *LongBench* study includes eight lung cancer cell lines derived from patients with distinct subtypes, specifically Lung Adenocarcinoma (LUAD) and two Small Cell Lung Cancer (SCLC) subtypes: SCLC-A and SCLC-P. These subtypes are defined by differential expression of the transcriptional regulators **ASCL1** and **POU2F3**. Each cell line was cultured independently to preserve its molecular identity.
+
+To support comparative analyses, a pooled mixture of the eight cell lines was also created in equal proportions for single-cell and single-nucleus RNA-seq experiments.
+
+Synthetic RNA spike-ins were added to each bulk RNA sample, including **Sequins**  (mix A or B) and **Lexogen SIRV-set 4**. Sequins are synthetic transcripts designed to mimic endogenous splicing, with mix A and B containing the same isoforms at differing abundances—serving as ground truth for differential expression analysis. The SIRV-set 4 includes:
+- **E0 mix**: 69 isoforms at equal molar concentrations to assess isoform complexity,
+- **ERCC mix**: 92 non-isoform transcripts covering a wide dynamic range for quantification accuracy,
+- **Long SIRVs**: 16 transcripts between 4–12 kb, also at equal molar concentrations.
+
+These spike-ins enable robust benchmarking of sequencing performance.
+
+A total of **32 bulk RNA-seq datasets** were generated from the eight samples with spike-ins, across four protocols:
+- ONT PCR-cDNA,
+- ONT direct RNA (dRNA),
+- PacBio Kinnex cDNA,
+- Illumina short-read sequencing.
+
+Additionally, **10X Genomics 3′ cDNA** single-cell (sc) and single-nucleus (sn) libraries were prepared from the pooled mixture and sequenced using ONT PCR-cDNA, PacBio Kinnex cDNA, and Illumina. This yielded:
+- 3 scRNA-seq datasets, and
+- 3 snRNA-seq datasets,
+
+enabling comprehensive cross-platform and library-type comparisons.
+
+# Files
+
+Below is a list of files. The detailed contents and description will be added after they are uploaded.
+
+
+## Long-read bulk RNA-seq
+Bulk RNA-seq data are available for each cell line using ONT (Oxford Nanopore Technologies) and PacBio platforms. ONT data are further divided into cDNA (PCR-cDNA) and direct RNA (dRNA) sequencing, with some cell lines having additional "topup" dRNA runs.
+
+### ONT (Oxford Nanopore Technologies)
+
+#### cDNA (PCR-cDNA)
+Files with the pattern `<cellline>_bulk_ONT.fastq.gz` represent ONT PCR-cDNA bulk RNA-seq for each cell line:
+```
+H69_bulk_ONT.fastq.gz
+H146_bulk_ONT.fastq.gz
+H211_bulk_ONT.fastq.gz
+H526_bulk_ONT.fastq.gz
+H1975_bulk_ONT.fastq.gz
+H2228_bulk_ONT.fastq.gz
+HCC827_bulk_ONT.fastq.gz
+SHP77_bulk_ONT.fastq.gz
+```
+
+#### direct RNA (dRNA)
+Files with the pattern `<cellline>_dRNA_ONT.fastq.gz` represent ONT direct RNA bulk RNA-seq. Additional files in `fastqs_topup/` are top-up dRNA runs for the same cell lines:
+```
+H69_dRNA_ONT.fastq.gz
+H146_dRNA_ONT.fastq.gz
+H211_dRNA_ONT.fastq.gz
+H526_dRNA_ONT.fastq.gz
+H1975_dRNA_ONT.fastq.gz
+H2228_dRNA_ONT.fastq.gz
+HCC827_dRNA_ONT.fastq.gz
+SHP77_dRNA_ONT.fastq.gz
+
+fastqs_topup/
+  H69_dRNA_ONT_topup.fastq.gz
+  H146_dRNA_ONT_topup.fastq.gz
+  H211_dRNA_ONT_topup.fastq.gz
+  H526_dRNA_ONT_topup.fastq.gz
+  H1975_dRNA_ONT_topup.fastq.gz
+  H2228_dRNA_ONT_topup.fastq.gz
+  HCC827_dRNA_ONT_topup.fastq.gz
+  SHP77_dRNA_ONT_topup.fastq.gz
+  md5sums_topup.chk
+```
+
+### PacBio
+Files with the pattern `<cellline>_bulk_PB.fastq.gz` represent PacBio Kinnex bulk RNA-seq for each cell line:
+```
+H69_bulk_PB.fastq.gz
+H146_bulk_PB.fastq.gz
+H211_bulk_PB.fastq.gz
+H526_bulk_PB.fastq.gz
+H1975_bulk_PB.fastq.gz
+H2228_bulk_PB.fastq.gz
+HCC827_bulk_PB.fastq.gz
+SHP77_bulk_PB.fastq.gz
+```
+
+## Short-read bulk RNA-seq (Illumina)
+Paired-end Illumina short-read data for each cell line (R1/R2):
+
+```
+H69_S2_R1_001.fastq.gz
+H69_S2_R2_001.fastq.gz
+H146_S1_R1_001.fastq.gz
+H146_S1_R2_001.fastq.gz
+H211_S4_R1_001.fastq.gz
+H211_S4_R2_001.fastq.gz
+H526_S3_R1_001.fastq.gz
+H526_S3_R2_001.fastq.gz
+H1975_S6_R1_001.fastq.gz
+H1975_S6_R2_001.fastq.gz
+H2228_S7_R1_001.fastq.gz
+H2228_S7_R2_001.fastq.gz
+HCC827_S8_R1_001.fastq.gz
+HCC827_S8_R2_001.fastq.gz
+SHP77_S5_R1_001.fastq.gz
+SHP77_S5_R2_001.fastq.gz
+```
+
+## Single-cell RNA-seq (10X Genomics)
+Single-cell RNA-seq data (SC_*) from 10X Genomics, sequenced on ONT, PacBio, and Illumina platforms:
+
+```
+SC_ONT.fastq.gz
+SC_PB.fastq.gz
+SC_GEX_S14_L001_I1_001.fastq.gz
+SC_GEX_S14_L001_I2_001.fastq.gz
+SC_GEX_S14_L001_R1_001.fastq.gz
+SC_GEX_S14_L001_R2_001.fastq.gz
+SC_GEX_S14_L002_I1_001.fastq.gz
+SC_GEX_S14_L002_I2_001.fastq.gz
+SC_GEX_S14_L002_R1_001.fastq.gz
+SC_GEX_S14_L002_R2_001.fastq.gz
+```
+
+## Single-nucleus RNA-seq (10X Genomics)
+Single-nucleus RNA-seq data (SN_*) from 10X Genomics, sequenced on ONT, PacBio, and Illumina platforms:
+
+```
+SN_ONT.fastq.gz
+SN_PB.fastq.gz
+SN_GEX_S13_L001_I1_001.fastq.gz
+SN_GEX_S13_L001_I2_001.fastq.gz
+SN_GEX_S13_L001_R1_001.fastq.gz
+SN_GEX_S13_L001_R2_001.fastq.gz
+SN_GEX_S13_L002_I1_001.fastq.gz
+SN_GEX_S13_L002_I2_001.fastq.gz
+SN_GEX_S13_L002_R1_001.fastq.gz
+SN_GEX_S13_L002_R2_001.fastq.gz
+```
+
+For more details, please visit the [NCBI BioProject page](https://www.ncbi.nlm.nih.gov/bioproject?term=PRJNA1171488&cmd=DetailsSearch) or [contact us](/contact/).

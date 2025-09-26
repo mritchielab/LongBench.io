@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Welcome to LongBench on LongBench</title>
+    <link>https://mritchielab.github.io/LongBench.io/</link>
+    <description>Recent content in Welcome to LongBench on LongBench</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 29 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://mritchielab.github.io/LongBench.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test Tutorial</title>
+      <link>https://mritchielab.github.io/LongBench.io/test-tutorial/</link>
+      <pubDate>Fri, 29 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://mritchielab.github.io/LongBench.io/test-tutorial/</guid>
+      <description>Introduction LongBench is a comprehensive benchmarking dataset designed to fill these critical gaps. Derived from eight lung cancer cell lines with synthetic RNA spike-ins, LongBench includes bulk, single-cell, and single-nucleus RNA-seq data from three state-of-the-art long-read sequencing platforms — ONT PCR-cDNA, ONT direct RNA, and PacBio Kinnex — alongside Illumina short-read data for robust cross-platform comparisons.&#xA;The LongBench dataset is a valuable resource for benchmarking and improving sequencing protocols and bioinformatics tools.</description>
+    </item>
+    <item>
+      <title>LongBench data description</title>
+      <link>https://mritchielab.github.io/LongBench.io/longbench-data-description/</link>
+      <pubDate>Tue, 20 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://mritchielab.github.io/LongBench.io/longbench-data-description/</guid>
+      <description>Introduction LongBench isa comprehensive benchmarking dataset designed to fill these critical gaps. Derived from eight lung cancer cell lines with synthetic RNA spike-ins, LongBench includes bulk, single-cell, and single-nucleus RNA-seq data from three state-of-the-art long-read sequencing platforms — ONT PCR-cDNA, ONT direct RNA, and PacBio Kinnex — alongside Illumina short-read data for robust cross-platform comparisons.&#xA;The LongBench dataset is a valuable resource for benchmarking and improving sequencing protocols and bioinformatics tools.</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>https://mritchielab.github.io/LongBench.io/about/</link>
+      <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
+      <guid>https://mritchielab.github.io/LongBench.io/about/</guid>
+      <description>LongBench is</description>
+    </item>
+    <item>
+      <title>Contact Information</title>
+      <link>https://mritchielab.github.io/LongBench.io/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mritchielab.github.io/LongBench.io/contact/</guid>
+      <description>If you&amp;rsquo;re interested in learning more about the data or potential collaboration opportunities, please feel free to reach out:&#xA;Dr. Yupei You – you.yu@wehi.edu.au Prof. Matt Ritchie – mritchie@wehi.edu.au For more information, visit the Ritchie Lab website.</description>
+    </item>
+  </channel>
+</rss>
