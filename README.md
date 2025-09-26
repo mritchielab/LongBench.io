@@ -12,9 +12,9 @@ More details of the dataset can be found [here](https://mritchielab.github.io/Lo
 
 ## Content
 - [Applications](#applications)
-- [Accessing the LongBench Dataset on AWS S3](#accessing-the-longbench-dataset-on-aws-s3)
+- [Data Availability](#data-availability)
 - [Data Analysis Tutorials](#data-analysis-tutorials-and-workflows)
-- [Citing the LongBench project](#citing-the-LongBench-project)
+- [Citing the LongBench project](#citing-the-longbench-project)
 
 
 ## Applications
@@ -23,9 +23,16 @@ Some example applications of the LongBench dataset include:
 - **Benchmarking analysis tools and method development** for isoform quantification, differential expression (DE), differential transcript usage (DTU), and variant calling.
 - **Cross-platform comparisons** of accuracy, sensitivity, and biases between ONT, PacBio, and Illumina sequencing technologies.
 
-## Accessing the LongBench Dataset on AWS S3
+## Data Availability
 
-The LongBench dataset is hosted on AWS S3 for direct access. To download the data:
+The **LongBench dataset** is publicly hosted on AWS S3 and includes:
+
+- **raw FASTQ** – bulk, single-cell, and single-nucleus RNA-seq
+- **POD5 files** – ONT direct-RNA reads for RNA-modification analysis
+- **Count matrices** - processed gene/transcript expression tables
+- **Cell line annotation** - metadata for single-cell and single-nucleus datasets
+
+### Download Instructions
 
 **Install the AWS CLI**:  
    ```bash
