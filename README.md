@@ -2,6 +2,14 @@
 
 # LongBench: a  multi-platform reference dataset spanning bulk, single-cell, and single-nucleus transcriptomics across eight human lung cancer cell lines with synthetic spike-in controls.
 
+## Content
+- [Introduction](#introduction)
+- [Applications](#applications)
+- [Data Availability](#data-availability)
+- [Data Analysis Tutorials](#data-analysis-tutorials-and-workflows)
+- [Citing the LongBench project](#citing-the-longbench-project)
+
+
 ## Introduction:
 LongBench is a comprehensive benchmarking dataset designed to fill these critical gaps. Derived from eight lung cancer cell lines with synthetic RNA spike-ins, LongBench includes bulk, single-cell, and single-nucleus RNA-seq data from three state-of-the-art long-read sequencing platforms — ONT PCR-cDNA, ONT direct RNA, and PacBio Kinnex — alongside Illumina short-read data for robust cross-platform comparisons.
 
