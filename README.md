@@ -40,6 +40,9 @@ The **LongBench dataset** is publicly hosted on AWS S3 and includes:
 - **Count matrices** - processed gene/transcript expression tables
 - **Cell line annotation** - metadata for single-cell and single-nucleus datasets
 
+You can browse and download individual files directly in your browser using the
+[**LongBench data browser**](https://mritchielab.github.io/LongBench.io/browse-data/).
+
 ### Download Instructions
 
 **Install the AWS CLI**:  

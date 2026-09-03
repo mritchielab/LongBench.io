@@ -20,6 +20,7 @@ LongBench is a comprehensive benchmarking dataset designed to evaluate long-read
 ## About LongBench
 
 - [**Data Description** - Detailed experimental design and results](longbench-data-description/)
+- [**Browse Data** - Explore and download files from the public S3 bucket](browse-data/)
 
 ## External Resources
 
