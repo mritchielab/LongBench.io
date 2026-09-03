@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Browse LongBench Data</title>
+<style>
+  :root {
+    --accent: #2c7fb8;
+    --border: #e2e2e2;
+    --muted: #767676;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1.25rem;
+    color: #222;
+  }
+  h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+  .subtitle { color: var(--muted); margin-top: 0; margin-bottom: 1.25rem; font-size: 0.95rem; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .back-link { display: inline-block; margin-bottom: 1rem; font-size: 0.9rem; }
+  .breadcrumb {
+    padding: 0.6rem 0.9rem;
+    background: #f6f8fa;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-size: 0.92rem;
+    word-break: break-all;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+  th, td { text-align: left; padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.02em; }
+  tr:hover td { background: #fafbfc; }
+  td.size, th.size { text-align: right; white-space: nowrap; }
+  td.modified, th.modified { white-space: nowrap; color: var(--muted); }
+  .icon { margin-right: 0.5rem; }
+  .name-cell { display: flex; align-items: center; }
+  .status { color: var(--muted); font-size: 0.9rem; padding: 1rem 0; }
+  .error { color: #b00020; }
+  #loadMore {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: #f6f8fa;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  #loadMore:hover { background: #eef1f3; }
+  footer { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../">&larr; Back to LongBench</a>
+<h1>Browse LongBench Data</h1>
+<p class="subtitle">Public S3 bucket: <code>longbench-data</code> (ap-southeast-2). Download via
+  <code>aws s3 sync s3://longbench-data/&lt;path&gt; . --no-sign-request</code>, or click a file below.</p>
+
+<div class="breadcrumb" id="breadcrumb"></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th class="size">Size</th>
+      <th class="modified">Last modified</th>
+    </tr>
+  </thead>
+  <tbody id="rows"></tbody>
+</table>
+
+<div id="status" class="status"></div>
+<button id="loadMore" style="display:none;">Load more</button>
+
+<footer>
+  Files are served directly from the public S3 bucket. Click a file to download it.
+</footer>
+
+<script>
+const BUCKET_URL = "https://longbench-data.s3.ap-southeast-2.amazonaws.com/";
+
+function currentPrefix() {
+  const hash = decodeURIComponent(location.hash.replace(/^#/, ""));
+  return hash;
+}
+
+function setPrefix(prefix) {
+  location.hash = encodeURIComponent(prefix);
+}
+
+function formatSize(bytes) {
+  bytes = Number(bytes);
+  if (!bytes) return "-";
+  const units = ["B", "KB", "MB", "GB", "TB"];
+  let i = 0;
+  while (bytes >= 1024 && i < units.length - 1) {
+    bytes /= 1024;
+    i++;
+  }
+  return bytes.toFixed(i === 0 ? 0 : 1) + " " + units[i];
+}
+
+function formatDate(iso) {
+  if (!iso) return "-";
+  const d = new Date(iso);
+  return d.toISOString().slice(0, 10);
+}
+
+function renderBreadcrumb(prefix) {
+  const el = document.getElementById("breadcrumb");
+  const parts = prefix.split("/").filter(Boolean);
+  let html = '<a href="#" data-prefix="">bucket root</a>';
+  let acc = "";
+  for (const part of parts) {
+    acc += part + "/";
+    html += ' / <a href="#" data-prefix="' + acc + '">' + part + "</a>";
+  }
+  el.innerHTML = html;
+  el.querySelectorAll("a").forEach(a => {
+    a.addEventListener("click", e => {
+      e.preventDefault();
+      setPrefix(a.dataset.prefix);
+    });
+  });
+}
+
+function folderRow(prefix, fullPrefix) {
+  const name = prefix.replace(fullPrefix, "").replace(/\/$/, "");
+  const tr = document.createElement("tr");
+  tr.innerHTML =
+    '<td><a href="#" class="name-cell" data-prefix="' + prefix + '"><span class="icon">\u{1F4C1}</span>' +
+    name + "/</a></td><td class=\"size\">-</td><td class=\"modified\">-</td>";
+  tr.querySelector("a").addEventListener("click", e => {
+    e.preventDefault();
+    setPrefix(prefix);
+  });
+  return tr;
+}
+
+function fileRow(key, size, modified, fullPrefix) {
+  const name = key.replace(fullPrefix, "");
+  if (!name) return null; // skip the "directory marker" object itself
+  const tr = document.createElement("tr");
+  const url = BUCKET_URL + key.split("/").map(encodeURIComponent).join("/");
+  tr.innerHTML =
+    '<td><a class="name-cell" href="' + url + '"><span class="icon">\u{1F4C4}</span>' + name +
+    '</a></td><td class="size">' + formatSize(size) + '</td><td class="modified">' +
+    formatDate(modified) + "</td>";
+  return tr;
+}
+
+async function fetchPage(prefix, continuationToken) {
+  const params = new URLSearchParams({ "list-type": "2", "delimiter": "/", "prefix": prefix });
+  if (continuationToken) params.set("continuation-token", continuationToken);
+  const res = await fetch(BUCKET_URL + "?" + params.toString());
+  if (!res.ok) throw new Error("S3 request failed: " + res.status);
+  const text = await res.text();
+  const xml = new DOMParser().parseFromString(text, "text/xml");
+  if (xml.querySelector("parsererror")) throw new Error("Failed to parse S3 response");
+
+  const commonPrefixes = Array.from(xml.getElementsByTagName("CommonPrefixes"))
+    .map(el => el.getElementsByTagName("Prefix")[0].textContent);
+  const contents = Array.from(xml.getElementsByTagName("Contents")).map(el => ({
+    key: el.getElementsByTagName("Key")[0].textContent,
+    size: el.getElementsByTagName("Size")[0].textContent,
+    modified: el.getElementsByTagName("LastModified")[0].textContent,
+  }));
+  const isTruncated = xml.getElementsByTagName("IsTruncated")[0].textContent === "true";
+  const nextToken = isTruncated
+    ? (xml.getElementsByTagName("NextContinuationToken")[0] || {}).textContent
+    : null;
+
+  return { commonPrefixes, contents, nextToken };
+}
+
+let state = { prefix: "", token: null };
+
+async function loadFolder(prefix, append) {
+  const rowsEl = document.getElementById("rows");
+  const statusEl = document.getElementById("status");
+  const loadMoreBtn = document.getElementById("loadMore");
+
+  if (!append) {
+    rowsEl.innerHTML = "";
+    state = { prefix, token: null };
+  }
+  renderBreadcrumb(prefix);
+  statusEl.textContent = "Loading...";
+  statusEl.className = "status";
+  loadMoreBtn.style.display = "none";
+
+  try {
+    const { commonPrefixes, contents, nextToken } = await fetchPage(prefix, state.token);
+    commonPrefixes.forEach(p => rowsEl.appendChild(folderRow(p, prefix)));
+    contents.forEach(({ key, size, modified }) => {
+      const row = fileRow(key, size, modified, prefix);
+      if (row) rowsEl.appendChild(row);
+    });
+
+    state.token = nextToken;
+    const total = rowsEl.children.length;
+    statusEl.textContent = total === 0 ? "This folder is empty." : total + " item(s) shown.";
+    loadMoreBtn.style.display = nextToken ? "inline-block" : "none";
+  } catch (err) {
+    statusEl.textContent = "Error: " + err.message;
+    statusEl.className = "status error";
+  }
+}
+
+document.getElementById("loadMore").addEventListener("click", () => {
+  loadFolder(state.prefix, true);
+});
+
+window.addEventListener("hashchange", () => loadFolder(currentPrefix(), false));
+loadFolder(currentPrefix(), false);
+</script>
+</body>
+</html>
